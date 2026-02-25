@@ -12,6 +12,7 @@ echo ""
 echo "--- EC2 Instances ---"
 
 aws ec2 describe-instances \
+    --profile personal
     --query 'Reservations[*].Instances[*].[InstanceId,State.Name,InstanceType]' \
     --output table
 
@@ -23,6 +24,7 @@ echo "--- S3 Buckets ---"
 # ==========================================
 
 aws s3api list-buckets \
+    --profile personal
     --query 'Buckets[*].[Name, Owner.ID]' \
     --output table
 
@@ -34,6 +36,7 @@ echo "--- IAM Users ---"
 # ==========================================
 
 aws iam list-users \
+    --profile personal
     --query 'Users[].[UserName,UserId,CreateDate]' \
     --output table
 
@@ -45,6 +48,7 @@ echo "--- VPCs ---"
 # ==========================================
 
 aws ec2 describe-vpcs \
+    --profile personal
     --query 'Vpcs[*].[VpcId,OwnerId,CidrBlock,IsDefault,Tags]' \
     --output table
 
