@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+            	"aws-portal:ViewBilling",
+            	"aws-portal:ViewUsage",
+            	"budgets:ViewBudget",
+            	"ce:GetCostAndUsage"
+        	],
+            "Resource":"*"
+        }
+    ]
+}
